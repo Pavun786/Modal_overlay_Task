@@ -3,9 +3,9 @@ import { useState } from "react";
 
 
 
- function Model({model,setModel}){
+ function Model({model,setModel,offer,setOffer}){
 
-     const [offer,setOffer] = useState(false)
+   
       
     const closeFunction = () =>{
         setModel((prev)=> prev = false)
@@ -13,7 +13,7 @@ import { useState } from "react";
 
     const acceptOffer = () =>{
         setOffer((value)=> value = true)
-        // setModel((prev)=> prev = false)
+        setModel((prev)=> prev = false)
     }
 
     return(
@@ -25,7 +25,7 @@ import { useState } from "react";
         <button onClick={acceptOffer} className="model-btn">Accept offer</button>
         </div>
         </div>
-        <div className={offer ? "showOffer" : "hideOffer"}>Offer accepted</div>   
+        
         </> 
     )
 
